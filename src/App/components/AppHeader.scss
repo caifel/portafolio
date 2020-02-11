@@ -1,0 +1,82 @@
+header {
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   justify-content: flex-end;
+   position: relative;
+   .hero-ctn {
+      background-image: url('https://lh3.googleusercontent.com/RE12U3eH58QJruoO8qm3srkvVyFrl5cKTOGNKM7zOzG4D7oFR-fxBG4XKkUgM4z4codO7HD-C7izCERu2D1qvnI2wS_WXjTsD_Rxfzr2Y5wMeKzZT72okY-6CMyLh4yru3hDsl9uU7kZnDXmQYXREYdG1tJDvhn4r8qi9j5aqBBWNkxdWHZ0QK96E9rupIFKGi3EKip2fsdBjpLDgTfL6lGX1RxoRfGQ2hNsJQOp2_w4tJNXw-XK97AcFgj7C8FCk7hoZ1IiJ-oqnjD1MPHn9mF5HPntO51ez25Fr-wA-WmCio8GodmG5oSQ6b9Jx4gy6N2yEsyl7n2XQJzhsCNfNgmtQ_h-vGH_YStlyyF47Fpgm73KPty9AyJJBXbD6TEltaWtMOQUHWnrAqu1cAZjU48JpTIzhRJEQADhgzBFeh3JNjh11EhI0kR5r17DJ7Yoipziui1qbPrXCDhZdUCm8qTg9N2N7wsOvpiF9ys_kZ3V-bc64r5UxhBMq7NvM7nWhvxl7aeu3JotFHqyi4oLwB2kvL-e38JHq9_xkeb56PVse6IyFXW5VcFc67ArytQRFLM4Q2wv7cI7UBxyhDwdQRYLcoEmYmIIDiZePthy3SspCJ8Oh8jo717HCcCpPiLqP3NXZhUYz_YI9VPffX-hG10mNV5rG62ya2dpQIFU9B1jgHR8EHharA=w1152-h864-no');
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-repeat: no-repeat;
+      z-index: -1;
+      background-size: auto 100%;
+      @include respond-above(md) {
+         background-size: 100% auto;
+      }
+
+      div.hero-overlay {
+         top: 0;
+         bottom: 0;
+         background-color: transparentize($dark-color, 0.4);
+         left: 0;
+         right: 0;
+         z-index: 10;
+         height: 100%;
+         width: 100%;
+         position: absolute;
+      }
+   }
+   @include respond-above(sm) {
+      flex-direction: row;
+   }
+   .person-info {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      &:last-child {
+         justify-content: flex-start;
+         @include respond-above(sm) {
+            justify-content: center;
+         }
+      }
+      h1,
+      h2 {
+         text-align: center;
+      }
+      h1 {
+         font-size: 3.5rem;
+         font-weight: bold;
+         color: $light-color;
+      }
+      h2 {
+         color: $primary-color;
+         font-size: 1.5rem;
+         letter-spacing: 1px;
+         margin-top: 10px;
+      }
+      img {
+         border-color: transparentize($light-color, 0.8);
+         border-style: solid;
+         border-width: 4px;
+         border-radius: 50%;
+         height: auto;
+         opacity: 0.5;
+         width: 200px;
+         @include respond-above(xs) {
+            width: 225px;
+         }
+         @include respond-above(md) {
+            width: 250px;
+         }
+      }
+      button {
+         margin-top: 30px;
+      }
+   }
+}

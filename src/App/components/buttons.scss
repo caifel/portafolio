@@ -1,0 +1,78 @@
+.call-to-action {
+   @include reset-button();
+   background-color: $primary-color;
+   border-color: $light-color;
+   border-width: 1px;
+   box-sizing: border-box;
+   border-radius: 5px;
+   color: $light-color;
+   cursor: pointer;
+   font-size: 1.2rem;
+   height: 2rem;
+   letter-spacing: 1px;
+   &:active,
+   &:hover {
+      background-color: transparentize($primary-color, 0.2);
+   }
+}
+.menu-bar-btn {
+   font-size: 20px;
+   color: $light-color;
+   height: 32px;
+   width: 32px;
+   background-color: transparent;
+   border-color: transparentize($light-color, 0.8);
+   border-style: solid;
+   border-width: 1px;
+   border-radius: 3px;
+   padding: 0;
+   line-height: 38px;
+   outline: none;
+}
+.menu-close-btn {
+   @extend .menu-bar-btn;
+}
+.modal-close-btn {
+   font-size: 0.8rem;
+   color: $dark-color;
+   cursor: pointer;
+   height: 1.3rem;
+   width: 1.3rem;
+   background-color: $light-color;
+   border-color: transparentize($light-color, 0.8);
+   border-style: solid;
+   border-width: 1px;
+   border-radius: 50%;
+   line-height: 1.4rem;
+   outline: none;
+   padding: 0;
+   &:hover {
+      opacity: 0.8;
+   }
+}
+.form-btn {
+   font-size: 0.8rem;
+   color: $dark-color;
+   cursor: pointer;
+   height: 1.5rem;
+   background-color: $light-color;
+   border-color: transparentize($dark-color, 0.8);
+   border-style: solid;
+   border-width: 1px;
+   border-radius: 4px;
+   line-height: 1.5rem;
+   outline: none;
+   padding: 0 0.5rem;
+   &.fill-btn {
+      color: $light-color;
+      background-color: $primary-color;
+      border-color: transparentize($primary-color, 0.8);
+   }
+   &:disabled {
+      cursor: default;
+      background-color: darken($light-color, 40%);
+   }
+   &:hover:not(:disabled) {
+      opacity: 0.8;
+   }
+}

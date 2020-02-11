@@ -1,0 +1,26 @@
+.date-input-ctn {
+   display: flex;
+   flex-direction: row;
+   .field-group-top {
+      // Class used in FieldGroup component
+      margin-left: 0.5rem;
+      margin-top: 0.2rem;
+      &:first-child {
+         margin-left: 0;
+      }
+      label {
+         font-size: 0.7rem;
+         margin-left: 0.1rem;
+         margin-bottom: 0.2rem;
+      }
+      .month-input {
+         width: 1.5rem;
+      }
+      .day-input {
+         width: 1.5rem;
+      }
+      .year-input {
+         width: 3rem;
+      }
+   }
+}

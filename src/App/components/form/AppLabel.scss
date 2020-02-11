@@ -1,0 +1,16 @@
+.app-label-ctn {
+   display: flex;
+   flex-direction: row;
+   label {
+      color: $dark-color;
+      // font-size: 0.8rem;
+      // letter-spacing: 1px;
+      // margin-left: 0.2rem;
+   }
+   span {
+      color: $primary-color;
+      font-size: 0.8rem;
+      margin-left: 0.2rem;
+      text-orientation: upright;
+   }
+}

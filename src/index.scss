@@ -1,0 +1,63 @@
+@import 'normalize-scss';
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap');
+
+@import './resources/fonts/styles';
+
+@import './scss/variables';
+
+@import './scss/mixins/media-query';
+@import './scss/mixins/reset-button';
+
+@import './scss/global';
+
+@import './App/components/Navigation';
+@import './App/components/AppHeader';
+@import './App/components/AppSection';
+@import './App/components/AppFooter';
+
+@import './App/components/buttons';
+
+@import './App/components/Modal';
+@import './App/components/ContactForm';
+
+@import './App/components/form/AppLabel';
+@import './App/components/form/FieldGroup';
+@import './App/components/form/fields/AppInput';
+@import './App/components/form/fields/AppTextarea';
+@import './App/components/form/fields/AppDateInput';
+@import './App/components/form/fields/ChooseBox';
+
+@import './App/components/cards/AboutMeCard';
+
+html {
+   @include respond-above(md) {
+      font-size: 20px;
+   }
+   @include respond-above(lg) {
+      font-size: 24px;
+   }
+}
+body {
+   margin: 0;
+   font-family: 'Open Sans', sans-serif;
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: normal;
+      margin: 0;
+   }
+   ul {
+      margin: 0;
+      padding: 0;
+      li {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+      }
+   }
+}
