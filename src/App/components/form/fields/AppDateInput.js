@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import moment from 'moment';
 import AppInput from './AppInput';
-import AppLabel from '../AppLabel';
-import FieldGroup from '../FieldGroup';
+import AppLabel from '../appLabel';
+import FieldGroup from '../fieldGroup';
+import { LocalizationContext } from '../../../contexts';
 
 const isNumber = value => !isNaN(Number(value));
 function getMaxDay(month, year) {
@@ -23,6 +24,7 @@ function AppDateInput({ date, maxDate, onChange }) {
    const [month, setMonth] = useState('');
    const [day, setDay] = useState('');
    const [year, setYear] = useState('');
+   const { strings } = useContext(LocalizationContext);
 
    const updateDay = value => {
       const maxValue = getMaxDay(month || 0, year || 0);
@@ -63,7 +65,7 @@ function AppDateInput({ date, maxDate, onChange }) {
    return (
       <div className="date-input-ctn">
          <FieldGroup
-            labelNode={<AppLabel htmlFor="month" text="Month" />}
+            labelNode={<AppLabel htmlFor="month" text={strings.form.labels.month} />}
             fieldNode={
                <AppInput
                   className="month-input"
@@ -76,7 +78,7 @@ function AppDateInput({ date, maxDate, onChange }) {
             }
          />
          <FieldGroup
-            labelNode={<AppLabel htmlFor="day" text="Day" />}
+            labelNode={<AppLabel htmlFor="day" text={strings.form.labels.day} />}
             fieldNode={
                <AppInput
                   className="day-input"
@@ -89,7 +91,7 @@ function AppDateInput({ date, maxDate, onChange }) {
             }
          />
          <FieldGroup
-            labelNode={<AppLabel htmlFor="year" text="Year" />}
+            labelNode={<AppLabel htmlFor="year" text={strings.form.labels.year} />}
             fieldNode={
                <AppInput
                   className="year-input"

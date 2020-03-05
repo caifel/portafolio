@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import ModalContext from '../contexts/ModalContext';
+import { ModalContext, LocalizationContext } from '../contexts';
 
 function CallToAction({ children, ...others }) {
    return (
@@ -15,12 +15,26 @@ CallToAction.propTypes = {
 };
 
 function MenuBarButton(props) {
-   return <button className="menu-bar-btn icon-bars" {...props} />;
+   const { strings } = useContext(LocalizationContext);
+   return (
+      <button
+         aria-label={strings.form.buttons.menu}
+         className="menu-bar-btn icon-bars"
+         {...props}
+      />
+   );
 }
 function MenuCloseButton(props) {
-   return <button className="menu-close-btn icon-times" {...props} />;
+   const { strings } = useContext(LocalizationContext);
+   return (
+      <button
+         aria-label={strings.form.buttons.close}
+         className="menu-close-btn icon-times"
+         {...props}
+      />
+   );
 }
-function ModalCloseButton(props) {
+function ModalCloseButton() {
    const modalAPI = useContext(ModalContext);
    return <button className="modal-close-btn icon-times" onClick={modalAPI.close} />;
 }

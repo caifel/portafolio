@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AppFooter = props => {
+const Footer = () => {
    return (
       <footer style={{ height: 200 }}>
          <span>footer</span>
@@ -8,4 +8,4 @@ const AppFooter = props => {
    );
 };
 
-export default AppFooter;
+export default Footer;

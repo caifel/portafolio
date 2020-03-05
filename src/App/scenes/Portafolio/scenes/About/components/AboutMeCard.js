@@ -1,5 +1,4 @@
 import React from 'react';
-import { string } from 'postcss-selector-parser';
 import Proptypes from 'prop-types';
 
 function AboutMeCard({ answerText, style, questionText }) {
