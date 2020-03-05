@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
-import Modal from '../components/Modal';
+import { ModalContext } from '../../contexts';
+import Modal from '../Modal';
 
-const ModalContext = React.createContext({
-   open: () => {}
-});
-
-export const ModalProvider = ModalContext.Provider;
-export const ModalConsumer = ModalContext.Consumer;
-export const ModalWrap = ({ children }) => {
+export const ModalProvider = ({ children }) => {
    const [backdrop, setBackdrop] = useState(false);
    const [content, setContent] = useState(null);
    const [type, setType] = useState('');
@@ -26,13 +21,13 @@ export const ModalWrap = ({ children }) => {
    };
 
    return (
-      <ModalProvider
+      <ModalContext.Provider
          value={{ isOpen: Boolean(content), open: handleOpenModal, close: handleCloseModal }}
       >
          {children}
          {content && <Modal children={content} backdrop={backdrop} type={type} />}
-      </ModalProvider>
+      </ModalContext.Provider>
    );
 };
 
-export default ModalContext;
+export default ModalProvider;

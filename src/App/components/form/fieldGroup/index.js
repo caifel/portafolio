@@ -1,6 +1,6 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import { POSITION } from '../../constants';
+import { POSITION } from '../../../constants';
 
 const { BOTTOM, LEFF, RIGHT, TOP } = POSITION;
 

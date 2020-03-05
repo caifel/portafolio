@@ -11,24 +11,24 @@
 
 @import './scss/global';
 
-@import './App/components/Navigation';
-@import './App/components/AppHeader';
-@import './App/components/AppSection';
-@import './App/components/AppFooter';
-
 @import './App/components/buttons';
 
 @import './App/components/Modal';
-@import './App/components/ContactForm';
 
-@import './App/components/form/AppLabel';
-@import './App/components/form/FieldGroup';
+@import './App/components/form/appLabel/';
+@import './App/components/form/fieldGroup/';
 @import './App/components/form/fields/AppInput';
 @import './App/components/form/fields/AppTextarea';
 @import './App/components/form/fields/AppDateInput';
 @import './App/components/form/fields/ChooseBox';
 
-@import './App/components/cards/AboutMeCard';
+@import './App/scenes/Portafolio/components/sectionWrap';
+@import './App/scenes/Portafolio/components/contactForm';
+@import './App/scenes/Portafolio/components/navigation';
+@import './App/scenes/Portafolio/components/HeroSection';
+@import './App/scenes/Portafolio/components/Footer';
+
+@import './App/scenes/Portafolio/scenes/About/components/AboutMeCard';
 
 html {
    @include respond-above(md) {
